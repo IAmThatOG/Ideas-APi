@@ -1,0 +1,11 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "Gabbyg89@.com",
+    "database": "ideasdb",
+    "entities": ["dist/**/*.model.js", "src/**/*.model.ts"],
+    "synchronize": true,
+    "logging": true
+}
