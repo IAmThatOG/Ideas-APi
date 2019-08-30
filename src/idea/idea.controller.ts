@@ -12,9 +12,9 @@ import {
 } from '@nestjs/common';
 import { IdeaService } from './idea.service';
 import { IdeaRequestDto } from './dto/idea-request.dto';
-import { HttpErrorFilter } from 'src/shared/http-error-filter';
-import { LoggingInterceptor } from 'src/shared/logging.interceptor';
-import { ValidationPipe } from 'src/pipes/validation.pipe';
+import { HttpErrorFilter } from '../shared/http-error-filter';
+import { LoggingInterceptor } from '../shared/logging.interceptor';
+import { ValidationPipe } from '../pipes/validation.pipe';
 import { CreateIdeaDto } from './dto/create-idea.dto';
 
 @Controller('ideas')

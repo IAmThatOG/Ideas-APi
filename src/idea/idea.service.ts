@@ -12,7 +12,7 @@ import { Idea } from './models/idea.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { IdeaRequestDto } from './dto/idea-request.dto';
 import { IdeaResponseDto } from './dto/idea-response.dto';
-import { BaseResponseDto } from 'src/idea/models/base-response.dto';
+import { BaseResponseDto } from '../idea/models/base-response.dto';
 
 @Injectable()
 export class IdeaService {
