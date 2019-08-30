@@ -19,6 +19,10 @@ jobs:
 
     steps:
       - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$
 
       # Download and cache dependencies
       - restore_cache:
