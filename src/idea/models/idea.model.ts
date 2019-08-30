@@ -1,20 +1,25 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, Unique, VersionColumn } from "typeorm";
-import { version } from "@babel/core";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('idea')
 export class Idea {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @Column('text')
-    idea: string;
+  @Column('text')
+  idea: string;
 
-    @Column('text')
-    description: string;
+  @Column('text')
+  description: string;
 
-    @CreateDateColumn()
-    dateCreated: Date;
+  @CreateDateColumn()
+  dateCreated: Date;
 
-    @UpdateDateColumn()
-    dateUpdated: Date;
+  @UpdateDateColumn()
+  dateUpdated: Date;
 }
