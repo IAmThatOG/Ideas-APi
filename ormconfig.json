@@ -5,7 +5,7 @@
     "username": "postgres",
     "password": "Gabbyg89@.com",
     "database": "ideasdb",
-    "entities": ["dist/**/*.model.js", "src/**/*.model.ts"],
+    "entities": ["dist/**/*.model{.ts,.js}"],
     "synchronize": true,
     "logging": true
 }

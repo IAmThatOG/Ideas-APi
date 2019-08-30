@@ -1,4 +1,3 @@
-
 /**
  *API response wrapper
  *
@@ -6,5 +5,9 @@
  * @class BaseResponseDto
  */
 export class BaseResponseDto {
-    constructor(public responseCode: string, public responseMsg: string, public body: any) { }
+  constructor(
+    public responseCode: string,
+    public responseMsg: string,
+    public body: any,
+  ) {}
 }
