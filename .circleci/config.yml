@@ -8,8 +8,8 @@ jobs:
     docker:
       # specify the version you desire here
       - image: buildpack-deps:trusty
-      #- image: circleci/node:11.12.0
-      #- image: circleci/postgres:latest
+      - image: circleci/node:11.12.0
+      - image: circleci/postgres:latest
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -41,7 +41,7 @@ jobs:
 
       # run tests!
       - run: yarn test
-#workflows
+
 workflows:
   version: 2
   build-deploy:
