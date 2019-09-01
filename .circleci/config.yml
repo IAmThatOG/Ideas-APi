@@ -44,7 +44,9 @@ jobs:
           name: Run Build
           command: yarn run build
 
-      # run tests!
+  # run tests!
+    test:
+      - build
       - run: 
           name: Run tests
           command: yarn test
