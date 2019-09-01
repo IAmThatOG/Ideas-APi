@@ -12,7 +12,7 @@ jobs:
       # specify the version you desire here
       # - image: buildpack-deps:trusty
       - image: circleci/node:11.12.0
-      - image: circleci/postgres:latest
+      # - image: circleci/postgres:latest
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -37,10 +37,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run:
-          name: Deploy Master to Heroku
-          command: rimraf dist && tsc -p tsconfig.build.json
 
       # run tests!
       - run: yarn test
