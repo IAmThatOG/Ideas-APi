@@ -1,3 +1,7 @@
+# personal ignores
+nodemon.json
+.env
+
 # compiled output
 /dist
 /node_modules
