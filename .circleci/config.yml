@@ -5,6 +5,9 @@
 version: 2
 jobs:
   build:
+    filters:
+      branches:
+        only: master
     docker:
       # specify the version you desire here
       # - image: buildpack-deps:trusty
@@ -20,10 +23,6 @@ jobs:
 
     steps:
       - checkout
-      - run:
-          name: Deploy Master to Heroku
-          command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
       # Download and cache dependencies
       - restore_cache:
@@ -39,8 +38,22 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - run:
+          name: Deploy Master to Heroku
+          command: rimraf dist && tsc -p tsconfig.build.json
+
       # run tests!
       - run: yarn test
+
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 workflows:
   version: 2
